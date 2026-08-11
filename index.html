@@ -2067,6 +2067,10 @@
       checkoutBtn.href = paymentLinks[selectedFinish];
       checkoutBtn.target = '_blank';
     }
+
+    // Garante que o link de pagamento funcione desde o carregamento da página
+    // mesmo sem o usuário interagir com as opções
+    updateSummary();
   </script>
 
 </body>
