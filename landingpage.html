@@ -2016,12 +2016,6 @@
     var selectedPrice = 149.90;
     var personalizeActive = false;
 
-    // Links de pagamento Yampi
-    var paymentLinks = {
-      gold: 'https://recuerda-tu-corona.pay.yampi.com.br/r/L9B7QOXSPA',
-      silver: 'https://recuerda-tu-corona.pay.yampi.com.br/r/GTG9VDQNL6'
-    };
-
     function selectFinish(card) {
       document.querySelectorAll('.finish-card').forEach(function (c) { c.classList.remove('selected'); });
       card.classList.add('selected');
@@ -2061,11 +2055,6 @@
       document.getElementById('summaryFinish').textContent = finishNames[selectedFinish];
       document.getElementById('summaryPersonalize').style.display = personalizeActive ? 'inline' : 'none';
       document.getElementById('summaryTotal').textContent = '$ ' + total.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
-      // Atualiza o link do botão de pagamento conforme o acabamento escolhido
-      var checkoutBtn = document.getElementById('checkoutBtn');
-      checkoutBtn.href = paymentLinks[selectedFinish];
-      checkoutBtn.target = '_blank';
     }
   </script>
 
