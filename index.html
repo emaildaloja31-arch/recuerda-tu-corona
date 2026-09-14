@@ -1741,21 +1741,21 @@
 
       <!-- Seleção de acabamento -->
       <div class="finish-selector" id="finishSelector">
-        <div class="finish-card finish-gold selected" data-finish="gold" data-price="29899,90"
+        <div class="finish-card finish-gold selected" data-finish="gold" data-price="29.99"
           onclick="selectFinish(this)">
           <span class="finish-badge">Sélectionné</span>
           <div class="finish-circle"></div>
           <h3>Bracelet Doré</h3>
           <p class="finish-desc">Revêtement PVD 18K</p>
-          <div class="finish-price">$ 29.899,90</div>
+          <div class="finish-price">€29.99</div>
           <span class="finish-tag">+ Vendu</span>
         </div>
-        <div class="finish-card finish-silver" data-finish="silver" data-price="29899,90" onclick="selectFinish(this)">
+        <div class="finish-card finish-silver" data-finish="silver" data-price="29.99" onclick="selectFinish(this)">
           <span class="finish-badge">Sélectionné</span>
           <div class="finish-circle"></div>
           <h3>Bracelet Argenté</h3>
           <p class="finish-desc">Acier chirurgical 316L poli</p>
-          <div class="finish-price">$ 29.899,90</div>
+          <div class="finish-price">€29.99</div>
           <span class="finish-tag">Classique</span>
         </div>
       </div>
@@ -1793,7 +1793,7 @@
           <span id="summaryFinish">Bracelet Doré — PVD 18K</span>
           <span id="summaryPersonalize" style="display:none;"> + Prénom gravé</span>
         </div>
-        <div class="summary-total" id="summaryTotal">$ 29.899,90</div>
+        <div class="summary-total" id="summaryTotal">€29.99</div>
         <a href="#" class="btn btn-primary" id="checkoutBtn">
           Passer au paiement <span class="btn-arrow">→</span>
         </a>
@@ -2014,13 +2014,13 @@
 
     // ============ OFERTA: SELEÇÃO DE ACABAMENTO ============
     var selectedFinish = 'gold';
-    var selectedPrice = 149.90;
+    var selectedPrice = 29.99;
     var personalizeActive = false;
 
     // Links de pagamento Yampi
     var paymentLinks = {
-      gold: 'https://recuerda-tu-corona.pay.yampi.com.br/r/L9B7QOXSPA',
-      silver: 'https://recuerda-tu-corona.pay.yampi.com.br/r/GTG9VDQNL6'
+      gold: 'https://buy.stripe.com/14A3co6zidf5dyPb3CcZa05',
+      silver: 'https://buy.stripe.com/14A14ge1Ka2T7arc7GcZa06'
     };
 
     function selectFinish(card) {
@@ -2057,11 +2057,11 @@
     function updateSummary() {
       var finishNames = { gold: 'Bracelet Doré — PVD 18K', silver: 'Bracelet Argenté — Acier 316L' };
       var total = selectedPrice;
-      if (personalizeActive) { total += 3999.90; }
+      if (personalizeActive) { total += 0; }
 
       document.getElementById('summaryFinish').textContent = finishNames[selectedFinish];
       document.getElementById('summaryPersonalize').style.display = personalizeActive ? 'inline' : 'none';
-      document.getElementById('summaryTotal').textContent = '$ ' + total.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('summaryTotal').textContent = '€ ' + total.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
       // Atualiza o link do botão de pagamento conforme o acabamento escolhido
       var checkoutBtn = document.getElementById('checkoutBtn');
